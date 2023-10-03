@@ -1,0 +1,21 @@
+<!-- Main Content -->
+<div class="container mt-5">
+    <div class="row">
+        <h3>Current blogs</h3>
+        {{#each blogs as |blogs|}}
+        <div class="col-md-4">
+            <ul class="list-group">
+                {{blogs}}
+                <!-- Add a list of recent blog posts here -->
+            </ul>
+        </div>
+           <div class="col-md-8">
+            <h1>{{blogs.name}}</h1>
+            <p>{{blogs.description}}</p>
+            <p>{{comments}}</p>
+            <!-- Add your blog posts here -->
+        </div>
+        {{/each}}
+    </div>
+</div>
+

@@ -1,0 +1,40 @@
+<h1>Login</h1>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2 class="mb-4">Login</h2>
+            <div id="login-form-template"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Your Handlebars Template -->
+<script id="Login-form" type="text/x-handlebars-template">
+    <form>
+        <div class="Login-section">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" placeholder="{{user.name}}">
+        </div>
+        <div class="Login-section">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="{{user.password}}">
+        </div>
+        <button type="submit" class="btn btn-primary">{{user.name}}</button>
+    </form>
+</script>
+
+<script>
+    // Grabs Handlebars
+    const templateform = document.getElementById("login-form").innerHTML
+    // Compile the Handlebars 
+    const template = Handlebars.compile(templateform);
+    const templateData = {
+        user.name: "Enter your username",
+        user.password: "Enter your password",
+        user.button: "Login"
+    };
+
+    const renderedHTML = template(templateData);
+    document.querySelector("login-form").innerHTML = renderedHTML;
+</script>
+
